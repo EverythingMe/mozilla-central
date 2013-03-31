@@ -28,6 +28,7 @@
 #include "nsPNGDecoder.h"
 #include "nsGIFDecoder2.h"
 #include "nsJPEGDecoder.h"
+#include "nsWEBPDecoder.h"
 #include "nsBMPDecoder.h"
 #include "nsICODecoder.h"
 #include "nsIconDecoder.h"
@@ -2567,6 +2568,9 @@ RasterImage::InitDecoder(bool aDoSizeDecode, bool aIsSynchronous /* = false */)
       mDecoder = new nsJPEGDecoder(*this,
                                    mHasBeenDecoded ? Decoder::SEQUENTIAL :
                                                      Decoder::PROGRESSIVE);
+      break;
+    case eDecoderType_webp:
+      mDecoder = new nsWEBPDecoder(*this);
       break;
     case eDecoderType_bmp:
       mDecoder = new nsBMPDecoder(*this);

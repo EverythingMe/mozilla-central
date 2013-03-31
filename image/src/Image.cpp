@@ -60,7 +60,6 @@ Image::GetDecoderType(const char *aMimeType)
   else if (!strcmp(aMimeType, IMAGE_GIF))
     rv = eDecoderType_gif;
 
-
   // JPEG
   else if (!strcmp(aMimeType, IMAGE_JPEG))
     rv = eDecoderType_jpeg;
@@ -68,6 +67,10 @@ Image::GetDecoderType(const char *aMimeType)
     rv = eDecoderType_jpeg;
   else if (!strcmp(aMimeType, IMAGE_JPG))
     rv = eDecoderType_jpeg;
+
+  // WEBP
+  else if (!strcmp(aMimeType, IMAGE_WEBP))
+    rv = eDecoderType_webp;
 
   // BMP
   else if (!strcmp(aMimeType, IMAGE_BMP))

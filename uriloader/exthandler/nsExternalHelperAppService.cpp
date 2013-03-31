@@ -393,6 +393,7 @@ static nsDefaultMimeTypeEntry defaultMimeEntries [] =
   { APPLICATION_RDF, "rdf" },
   { TEXT_XUL, "xul" },
   { IMAGE_PNG, "png" },
+  { IMAGE_WEBP, "webp" },
   // -- end extensions used during startup
   { TEXT_CSS, "css" },
   { IMAGE_JPEG, "jpeg" },
@@ -476,6 +477,7 @@ static nsExtraMimeTypeEntry extraMimeEntries [] =
   { IMAGE_ICO, "ico,cur", "ICO Image" },
   { IMAGE_JPEG, "jpeg,jpg,jfif,pjpeg,pjp", "JPEG Image" },
   { IMAGE_PNG, "png", "PNG Image" },
+  { IMAGE_WEBP, "webp", "WEBP Image" },
   { IMAGE_TIFF, "tiff,tif", "TIFF Image" },
   { IMAGE_XBM, "xbm", "XBM Image" },
 #ifdef MOZ_WBMP

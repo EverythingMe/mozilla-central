@@ -89,6 +89,7 @@
 #define IMAGE_PNG                           "image/png"
 #define IMAGE_X_PNG                         "image/x-png"
 #define IMAGE_PPM                           "image/x-portable-pixmap"
+#define IMAGE_WEBP                          "image/webp"
 #define IMAGE_XBM                           "image/x-xbitmap"
 #define IMAGE_XBM2                          "image/x-xbm"
 #define IMAGE_XBM3                          "image/xbm"

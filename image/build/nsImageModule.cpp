@@ -76,6 +76,7 @@ static const mozilla::Module::CategoryEntry kImageCategories[] = {
 #ifdef MOZ_WBMP
   { "Gecko-Content-Viewers", IMAGE_WBMP, "@mozilla.org/content/document-loader-factory;1" },
 #endif
+  { "Gecko-Content-Viewers", IMAGE_WEBP, "@mozilla.org/content/document-loader-factory;1" },
   { "content-sniffing-services", "@mozilla.org/image/loader;1", "@mozilla.org/image/loader;1" },
   { NULL }
 };

@@ -1,0 +1,75 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+DEPTH = @DEPTH@
+topsrcdir = @top_srcdir@
+srcdir = @srcdir@
+VPATH = @srcdir@
+
+include $(DEPTH)/config/autoconf.mk
+
+LIBRARY_NAME = mozwebp
+FORCE_STATIC_LIB = 1
+ifeq (WINT,$(OS_ARCH))
+VISIBILITY_FLAGS=
+endif
+
+LOCAL_INCLUDES += \
+  $(srcdir)/dec/ \
+  $(srcdir)/dsp/ \
+  $(srcdir)/utils/ \
+  $(srcdir)/webp/ \
+  $(NULL)
+
+ifeq ($(OS_TARGET),Android)
+# For cpu-features.h
+LOCAL_INCLUDES += -I$(ANDROID_NDK)/sources/android/cpufeatures
+endif
+
+VPATH += \
+  $(srcdir)/dec/ \
+  $(srcdir)/dsp/ \
+  $(srcdir)/utils/ \
+  $(NULL)
+
+CSRCS += \
+  alpha.c \
+  buffer.c \
+  frame.c \
+  idec.c \
+  io.c \
+  layer.c \
+  quant.c \
+  tree.c \
+  vp8.c \
+  vp8l.c \
+  webp.c \
+  cpu.c \
+  dec.c \
+  dec_neon.c \
+  dec_sse2.c \
+  lossless.c \
+  upsampling.c \
+  upsampling_sse2.c \
+  yuv.c \
+  bit_reader.c \
+  color_cache.c \
+  filters.c \
+  huffman.c \
+  quant_levels.c \
+  rescaler.c \
+  thread.c \
+  utils.c \
+  $(NULL)
+
+EXPORTS_NAMESPACES = webp
+
+EXPORTS_webp = \
+	webp/types.h \
+	webp/decode.h \
+        $(NULL)
+
+
+include $(topsrcdir)/config/rules.mk

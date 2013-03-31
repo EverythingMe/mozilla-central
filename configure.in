@@ -1,4 +1,3 @@
-
 dnl -*- Mode: Autoconf; tab-width: 4; indent-tabs-mode: nil; -*-
 dnl vi: set tabstop=4 shiftwidth=4 expandtab syntax=m4:
 dnl This Source Code Form is subject to the terms of the Mozilla Public
@@ -4197,6 +4196,7 @@ MOZ_WAVE=1
 MOZ_SAMPLE_TYPE_FLOAT32=
 MOZ_SAMPLE_TYPE_S16=
 MOZ_OPUS=1
+MOZ_WEBP=1
 MOZ_WEBM=1
 MOZ_DASH=
 MOZ_WMF=
@@ -5536,6 +5536,10 @@ fi
 AC_SUBST(MOZ_NATIVE_LIBVPX)
 AC_SUBST(MOZ_LIBVPX_CFLAGS)
 AC_SUBST(MOZ_LIBVPX_LIBS)
+
+if test "$MOZ_WEBP"; then
+    AC_DEFINE(MOZ_WEBP)
+fi
 
 if test "$MOZ_WEBM"; then
     MOZ_CUBEB=1
@@ -8900,6 +8904,7 @@ AC_SUBST(MOZ_VORBIS)
 AC_SUBST(MOZ_TREMOR)
 AC_SUBST(MOZ_OPUS)
 AC_SUBST(MOZ_WEBM)
+AC_SUBST(MOZ_WEBP)
 AC_SUBST(MOZ_DASH)
 AC_SUBST(MOZ_WMF)
 AC_SUBST(MOZ_MEDIA_PLUGINS)
